@@ -1,0 +1,185 @@
+$bg-color: #f2f2f2;
+$color: #333;
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+$ssp: 'Source Sans Pro', sans-serif;
+
+body {
+    background: $bg-color;
+    color:$color;
+    font-family:$ssp;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap:1em;
+        // grid-auto-rows: minmax(200px, auto);
+        grid-auto-rows: 250px;
+
+
+        .nested {
+            display:grid;
+        }
+
+
+        > div {
+           background-color: #eee;
+           padding:1em;
+       }
+
+        // @media only screen and (min-width: 480px) {
+        //     grid-auto-rows: minmax(150px, auto);
+        //     grid-template-columns: repeat(6, 1fr);
+        //     grid-template-areas: "header logo logo stats img_1 img_1"
+        // }
+
+
+        .box {
+            background: $bg-color;
+            border:1px solid black;
+        }
+
+        header {
+            // align-self:start;
+            grid-row: 1 / 4;
+            background-color:#222527;
+
+            ul {
+                padding:0px;
+                margin:0px;
+                border-bottom:1px solid #1c1f21;
+                }
+
+                ul li
+                {
+                list-style-type:none;
+                color:#5a5b5b;
+                padding:10px;
+                border-bottom:1px solid #272a2c;
+                border-top:1px solid #1c1f21;
+                overflow: auto;
+                cursor:pointer;
+                }
+
+                ul li:first-child{border-top:none;}
+
+                .fa
+                {
+                color: #1ebfe6;
+                display:block;
+                }
+
+                ul li:hover .fa
+                {
+                color:#0f82da;
+                }
+
+                ul li:hover .linktitle
+                {
+                color:#6c6d6e;
+                }
+
+                ul li div
+                {
+                float:left;
+                }
+
+                .icons
+                {
+                padding:10px;
+                }
+
+                .linktitle
+                {
+                line-height: 35px;
+                padding-left: 10px;
+                }
+
+
+                /* Reponsive menu code */
+                @media all and (max-width: 600px) {
+                aside
+                {
+                width:60px;
+                padding:0px 10px;
+                }
+
+                ul li
+                {
+                overflow:hidden;
+                padding:0px 10px;
+                }
+
+                .linktitle
+                {
+                position: absolute;
+                z-index: -1;
+                left: -50px;
+                padding: 29px 15px;
+                line-height:0px;
+                background: #1ebfe6;;
+                }
+
+                ul li:hover .linktitle
+                {
+                left:80px;
+                }
+                .icons
+                {
+                padding: 20px 10px;
+                }
+
+                ul li:hover .icons
+                {
+                -webkit-transform:rotate(360deg);
+                -moz-transform:rotate(360deg);
+                -ms-transform:rotate(360deg);
+                -o-transform:rotate(360deg);
+                transform:rotate(360deg);
+                }
+            }
+
+        }
+
+        .b {
+            grid-column: 2 / 3;
+
+        }
+
+        .c {
+            grid-column: 4;
+            grid-row:1;
+        }
+
+        .d {
+            grid-row:1;
+            grid-column: 5 / 6;
+        }
+
+        .e {
+            grid-row: 2;
+            grid-column: 2 / 4;
+        }
+
+        .f {
+            grid-column: 4 / 7;
+            grid-row:2;
+            color: #fff;
+            background-color: #1ebfe6;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .g {
+            grid-row:3;
+        }
+
+        .h {
+            grid-row:3;
+        }
+
+        .i {
+            grid-row:3;
+        }
+
+    }
+}
