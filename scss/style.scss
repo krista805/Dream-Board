@@ -1,20 +1,27 @@
-$bg-color: #f2f2f2;
-$color: #333;
+$bg-color: black;
+$color: #fff;
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 $ssp: 'Source Sans Pro', sans-serif;
 
 body {
-    background: $bg-color;
+    background: $color;
     color:$color;
     font-family:$ssp;
 
+    img {
+        max-width:100%;
+        height:auto;
+    }
+
     .grid {
         display: grid;
+        // grid-template-columns: 2fr 2fr 700px 700px;
+        // grid-template-columns: repeat(5, 1fr);
         grid-template-columns: repeat(5, 1fr);
-        grid-gap:1em;
-        // grid-auto-rows: minmax(200px, auto);
-        grid-auto-rows: 250px;
+        // grid-auto-rows: minmax(250px, auto);
+        grid-auto-rows: 350px;
+        overflow:hidden;
 
 
         .nested {
@@ -24,15 +31,7 @@ body {
 
         > div {
            background-color: #eee;
-           padding:1em;
        }
-
-        // @media only screen and (min-width: 480px) {
-        //     grid-auto-rows: minmax(150px, auto);
-        //     grid-template-columns: repeat(6, 1fr);
-        //     grid-template-areas: "header logo logo stats img_1 img_1"
-        // }
-
 
         .box {
             background: $bg-color;
@@ -40,14 +39,16 @@ body {
         }
 
         header {
-            // align-self:start;
-            grid-row: 1 / 4;
-            background-color:#222527;
+            grid-row: 1 / 5;
+            justify-content: center;
+            background-color:$bg-color;
 
             ul {
+                grid-template-rows: 2fr 1fr;
                 padding:0px;
                 margin:0px;
                 border-bottom:1px solid #1c1f21;
+                position: fixed;
                 }
 
                 ul li
@@ -142,13 +143,14 @@ body {
         }
 
         .b {
-            grid-column: 2 / 3;
+            grid-column: 2 / 4;
 
         }
 
         .c {
             grid-column: 4;
             grid-row:1;
+            background-color:#eaf2f6;
         }
 
         .d {
@@ -159,6 +161,10 @@ body {
         .e {
             grid-row: 2;
             grid-column: 2 / 4;
+
+            img {
+                width:100%;
+            }
         }
 
         .f {
@@ -175,10 +181,17 @@ body {
 
         .h {
             grid-row:3;
+            grid-column: 3 / 5;
         }
 
         .i {
+            grid-column: 5 / 7;
             grid-row:3;
+        }
+
+        .j {
+            grid-row:4;
+            grid-column: 2 / 7;
         }
 
     }
