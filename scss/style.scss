@@ -33,9 +33,17 @@ body {
 
          grid-template-rows: 80px 1fr 149px 149px 298px 260px 230px 332px 339px;
 
+         @media(max-width:1024px) {
+            grid-template-rows: 80px 1fr 149px 149px 252px 226px 205px 298px 400px;
+         }
+
         @media(max-width:768px) {
             grid-template-columns: 100px repeat(3, 1fr);
-            grid-template-rows: 80px 1fr 298px 318px 385px;
+            grid-template-rows: 80px 1fr 298px 318px 208px 200px;
+        }
+
+        @media(max-width:450px) {
+            grid-template-columns: repeat(2, 1fr);
         }
 
         > div {
@@ -199,6 +207,10 @@ body {
 
             grid-row: 4 / 6;
 
+            @media(max-width:768px){
+                grid-row:3;
+            }
+
         }
 
         .c {
@@ -222,11 +234,77 @@ body {
                 position: relative;
                 top: 35%;
                 padding:0 5px;
+                a {
+                    color: #dc006c;
+                }
+                small {
+                    color: #333;
+                }
+                .logo {
+                    font: 84px 'Arial Narrow', sans-serif;/* I picked this font because it's the closest looking 'web safe' font http://cssfontstack.com/ */
+                    color: #fefefe;
+                    text-transform: uppercase;
+                    letter-spacing: -4px;
+                }
+
+                /* stuff for both words */
+                .logo span {
+                    position: relative;
+                }
+                .logo span:before,
+                .logo span:after {
+                    content: '';
+                    position: absolute;
+                    border-width: 32px;/* makes a nice, big 64px square */
+                    border-style: solid;
+                    border-color: transparent;
+                    height: 0;
+                    z-index: 10;
+                }
+
+                /* stuff for 1st word */
+                .logo .word1 {
+                    color: #dc006c;
+                    margin-right: -38px;
+                    transform: rotateY(180deg);/* using Prefix free */
+                    display: inline-block;/* required for transform */
+                    z-index: 10;/* stack 1st word on top */
+                }
+                .logo .word1:before {
+                    right: -4px;/* would be left, but we flipped the word */
+                    top: -9px;
+                    border-top-color: #282828;/* match background color */
+                    border-right-color: #282828;/* would be left, but we flipped the word */
+                }
+                .logo .word1:after {
+                    left: 17px;/* would be right, but we flipped the word */
+                    bottom: -15px;
+                    border-bottom-color: #282828;
+                    border-left-color: #282828;/* would be right, but we flipped the word */
+                }
+
+                /* stuff for 2nd word */
+                .logo .word2 {
+                    z-index: 0;/* stack 2nd word below */
+                }
+                .logo .word2:before {
+                    left: -4px;
+                    top: -6px;
+                    border-top-color: #282828;
+                    border-left-color: #282828;
+                }
+                .logo .word2:after {
+                    right: -4px;
+                    bottom: 4px;
+                    border-bottom-color: #282828;
+                    border-right-color: #282828;
+                }
             }
 
             span, div {
                 color: #727272;
             }
+
         }
 
         .d {
@@ -270,14 +348,17 @@ body {
         .f {
             color: #fff;
             background-color: #71b6c1;
+            background-image: url('/image/nice-snow.png');
             grid-template-columns:  2fr;
-            // grid-row: 2;
             grid-column: 2 / 5;
             z-index: 999;
             margin-top: 170px;
-
             grid-row: 2 / 4;
             margin-top: 330px;
+
+            @media(max-width:1024px) {
+                margin-top:223px;
+            }
 
             .nested {
                 // padding: 5%;
@@ -325,14 +406,6 @@ body {
                 grid-row:5;
                 grid-column:4 / 5;
 
-            }
-
-            img {
-                @media (max-width:768px) {
-                    content: url("../image/sunset.jpeg");
-                    height: 100%;
-
-                }
             }
         }
 
@@ -385,6 +458,11 @@ body {
         .k {
             grid-row:8;
             grid-column:3;
+
+            @media(max-width:768px){
+                grid-row: 6;
+                grid-column: 4;
+            }
         }
 
         .l {
@@ -400,6 +478,8 @@ body {
             margin-left: -50vw;
             margin-right: -50vw;
         }
+
+
 
     }
 }
