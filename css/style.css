@@ -3,6 +3,10 @@ body {
   background: #fff;
   color: #fff;
   font-family: "Source Sans Pro", sans-serif; }
+  body .container {
+    width: 1140px;
+    max-width: 100%;
+    margin: 0 auto; }
   body img {
     max-width: 100%;
     height: auto;
@@ -10,26 +14,28 @@ body {
   body .grid {
     display: grid;
     overflow: hidden;
-    width: 100vw;
+    grid-auto-rows: min-content;
     grid-gap: .7vw 1%;
     margin: 0 auto;
-    grid-template-columns: 18.25% 17.25% 10.25% 24.25%; }
+    grid-template-columns: 100px repeat(3, 1fr);
+    grid-template-rows: 80px 1fr 149px 149px 298px 260px 230px 332px 339px; }
     @media (max-width: 768px) {
       body .grid {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 100px 1fr 1fr 1fr; } }
-    body .grid .nested {
-      display: grid; }
+        grid-template-columns: 100px repeat(3, 1fr);
+        grid-template-rows: 80px 1fr 298px 318px 385px; } }
     body .grid > div {
       background-color: #eee; }
     body .grid .box {
-      background: black; }
+      background: #fff; }
       @media (max-width: 768px) {
         body .grid .box {
           background: white; } }
+      body .grid .box img {
+        background-size: cover;
+        background-position: center; }
     body .grid header {
-      grid-row: 1 / 5;
-      grid-column: 1;
+      grid-row: 1;
+      grid-column: 1 / 7;
       justify-content: center;
       background-color: black;
       /* Reponsive menu code */ }
@@ -42,41 +48,48 @@ body {
       body .grid header ul {
         padding: 0px;
         margin: 0px;
-        border-bottom: 1px solid #1c1f21;
-        position: fixed; }
+        position: relative;
+        text-align: center;
+        border-bottom: none; }
         @media (max-width: 768px) {
           body .grid header ul {
             position: relative;
-            text-align: center; } }
+            text-align: center;
+            border-bottom: none; } }
       body .grid header ul li {
         list-style-type: none;
-        color: #5a5b5b;
         padding: 10px;
-        border-bottom: 1px solid #272a2c;
-        border-top: 1px solid #1c1f21;
         overflow: auto;
-        cursor: pointer; }
+        cursor: pointer;
+        width: 150px;
+        display: inline-block;
+        color: #5a5b5b;
+        border: none; }
         @media (max-width: 768px) {
           body .grid header ul li {
             border: none;
             width: 150px;
-            display: inline-block; } }
+            display: inline-block;
+            color: #5a5b5b;
+            border-bottom: none; } }
       body .grid header ul li:first-child {
         border-top: none; }
       body .grid header .fa {
-        color: #1ebfe6;
+        color: #71b6c1;
         display: block; }
       body .grid header ul li:hover .fa {
         color: #0f82da; }
       body .grid header ul li:hover .linktitle {
-        color: #6c6d6e; }
+        color: #6c6d6e;
+        font-size: 18px; }
       body .grid header ul li div {
         float: left; }
       body .grid header .icons {
         padding: 10px; }
       body .grid header .linktitle {
         line-height: 35px;
-        padding-left: 10px; }
+        padding-left: 10px;
+        color: #727272; }
       @media all and (max-width: 600px) {
         body .grid header aside {
           width: 60px;
@@ -102,51 +115,67 @@ body {
           -o-transform: rotate(360deg);
           transform: rotate(360deg); } }
     body .grid .b {
-      grid-column: 2 / 4; }
+      grid-column: 2 / 4;
+      grid-row: 4 / 6; }
     body .grid .c {
-      grid-column: 4;
-      grid-row: 1;
-      background-color: #eaf2f6; }
+      background-color: #eaf2f6;
+      position: relative;
+      grid-column: 2;
+      grid-row: 6; }
       @media (max-width: 768px) {
         body .grid .c {
-          grid-row: 3;
-          grid-column: 1 / 2; } }
+          grid-row: 4;
+          grid-column: 2; } }
       body .grid .c .content {
         text-align: center;
-        justify-self: center; }
+        position: relative;
+        top: 35%;
+        padding: 0 5px; }
       body .grid .c span, body .grid .c div {
         color: #727272; }
     body .grid .d {
-      grid-row: 1;
-      grid-column: 5 / 6; }
+      grid-row: 7;
+      grid-column: 2; }
       @media (max-width: 768px) {
         body .grid .d {
           grid-row: 2;
           grid-column: 3 / 4; } }
     body .grid .e {
-      grid-row: 2;
-      grid-column: 2 / 4; }
+      grid-template-rows: 200px 200px;
+      grid-row: 8;
+      grid-column: 2; }
       @media (max-width: 768px) {
         body .grid .e {
-          grid-row: 6;
+          grid-row: 5;
           grid-template-rows: 200px 200px;
-          grid-column: 1 / 4; } }
+          grid-column: 2 / 4; } }
       body .grid .e img {
         width: 100%; }
     body .grid .f {
-      grid-column: 4 / 6;
-      grid-row: 2;
       color: #fff;
       background-color: #71b6c1;
-      grid-template-columns: 2fr; }
+      grid-template-columns: 2fr;
+      grid-column: 2 / 5;
+      z-index: 999;
+      margin-top: 170px;
+      grid-row: 2 / 4;
+      margin-top: 330px; }
       body .grid .f .nested {
-        padding: 0 15px; }
+        position: relative;
+        grid-template-columns: 1fr 2fr;
+        padding: 5px 15px;
+        top: 0; }
         @media (max-width: 768px) {
           body .grid .f .nested {
-            grid-template-columns: 1fr 2fr; }
+            grid-template-columns: 1fr 2fr;
+            padding: 5px 15px;
+            top: 0; }
             body .grid .f .nested p {
               font-size: 15px;
               line-height: 23px; } }
+        body .grid .f .nested p {
+          font-size: 17px;
+          line-height: 28px; }
       @media (max-width: 768px) {
         body .grid .f {
           grid-row: 2;
@@ -154,29 +183,47 @@ body {
           z-index: 999;
           margin-top: 170px; } }
     body .grid .g {
-      grid-row: 3; }
+      grid-column: 4 / 5;
+      grid-row: 8; }
       @media (max-width: 768px) {
         body .grid .g {
-          grid-row: 4;
+          grid-row: 5;
           grid-column: 4 / 5; } }
+      @media (max-width: 768px) {
+        body .grid .g img {
+          content: url("../image/sunset.jpeg");
+          height: 100%; } }
     body .grid .h {
-      grid-row: 3;
+      grid-row: 6;
       grid-column: 3 / 5; }
       @media (max-width: 768px) {
         body .grid .h {
-          grid-row: 5;
-          grid-column: 2 / 4; } }
+          grid-row: 4;
+          grid-column: 3 / 5; } }
     body .grid .i {
-      grid-column: 2;
-      grid-row: 3; }
+      grid-column: 4 / 5;
+      grid-row: 4 / 6; }
       @media (max-width: 768px) {
         body .grid .i {
           grid-row: 3;
           grid-column: 4 / 5; } }
     body .grid .j {
-      grid-row: 4;
-      grid-column: 2 / 6; }
+      grid-row: 2;
+      grid-column: 1 / 6; }
       @media (max-width: 768px) {
         body .grid .j {
           grid-row: 2;
           grid-column: 1 / 6; } }
+    body .grid .k {
+      grid-row: 8;
+      grid-column: 3; }
+    body .grid .l {
+      grid-row: 9;
+      grid-column: 1 / 6; }
+    body .grid .full-width {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw; }
