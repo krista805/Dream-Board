@@ -1,8 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@font-face {
+  font-family: "Lombok";
+  src: url("/fonts/Lombok.otf") format("otf"); }
+
+@font-face {
+  font-family: 'Avenir';
+  src: url("/fonts/AvenirLTStd-Medium.otf") format("otf"); }
+
 body {
   background: #fff;
   color: #fff;
-  font-family: "Source Sans Pro", sans-serif; }
+  font-family: 'Avenir'; }
+  body h1.title {
+    font-family: "Lombok"; }
   body .container {
     width: 1140px;
     max-width: 100%;
@@ -28,7 +37,8 @@ body {
         grid-template-rows: 80px 1fr 298px 318px 208px 200px; } }
     @media (max-width: 450px) {
       body .grid {
-        grid-template-columns: repeat(2, 1fr); } }
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto; } }
     body .grid > div {
       background-color: #eee; }
     body .grid .box {
@@ -78,6 +88,10 @@ body {
             display: inline-block;
             color: #5a5b5b;
             border-bottom: none; } }
+        @media (max-width: 450px) {
+          body .grid header ul li {
+            display: block;
+            margin: 0 auto; } }
       body .grid header ul li:first-child {
         border-top: none; }
       body .grid header .fa {
@@ -109,7 +123,14 @@ body {
           left: -50px;
           padding: 29px 15px;
           line-height: 0px;
-          background: #1ebfe6; }
+          background: #1ebfe6; } }
+  @media all and (max-width: 600px) and (max-width: 450px) {
+    body .grid header .linktitle {
+      z-index: 1;
+      left: 0px;
+      right: 0px;
+      background: #fff; } }
+      @media all and (max-width: 600px) {
         body .grid header ul li:hover .linktitle {
           left: 80px; }
         body .grid header .icons {
@@ -126,8 +147,15 @@ body {
       @media (max-width: 768px) {
         body .grid .b {
           grid-row: 3; } }
+      @media (max-width: 450px) {
+        body .grid .b {
+          grid-column: 1 / 5; } }
     body .grid .c {
-      background-color: #eaf2f6;
+      background: #4ca1af;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #4ca1af, #c4e0e5);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #eaf2f6, #c4e0e5);
       position: relative;
       grid-column: 2;
       grid-row: 6; }
@@ -135,75 +163,18 @@ body {
         body .grid .c {
           grid-row: 4;
           grid-column: 2; } }
+      @media (max-width: 450px) {
+        body .grid .c {
+          grid-row: 4;
+          grid-column: 1 / 4; } }
       body .grid .c .content {
         text-align: center;
         position: relative;
         top: 35%;
-        padding: 0 5px;
-        /* stuff for both words */
-        /* stuff for 1st word */
-        /* stuff for 2nd word */ }
-        body .grid .c .content a {
-          color: #dc006c; }
-        body .grid .c .content small {
-          color: #333; }
-        body .grid .c .content .logo {
-          font: 84px 'Arial Narrow', sans-serif;
-          /* I picked this font because it's the closest looking 'web safe' font http://cssfontstack.com/ */
-          color: #fefefe;
-          text-transform: uppercase;
-          letter-spacing: -4px; }
-        body .grid .c .content .logo span {
-          position: relative; }
-        body .grid .c .content .logo span:before,
-        body .grid .c .content .logo span:after {
-          content: '';
-          position: absolute;
-          border-width: 32px;
-          /* makes a nice, big 64px square */
-          border-style: solid;
-          border-color: transparent;
-          height: 0;
-          z-index: 10; }
-        body .grid .c .content .logo .word1 {
-          color: #dc006c;
-          margin-right: -38px;
-          transform: rotateY(180deg);
-          /* using Prefix free */
-          display: inline-block;
-          /* required for transform */
-          z-index: 10;
-          /* stack 1st word on top */ }
-        body .grid .c .content .logo .word1:before {
-          right: -4px;
-          /* would be left, but we flipped the word */
-          top: -9px;
-          border-top-color: #282828;
-          /* match background color */
-          border-right-color: #282828;
-          /* would be left, but we flipped the word */ }
-        body .grid .c .content .logo .word1:after {
-          left: 17px;
-          /* would be right, but we flipped the word */
-          bottom: -15px;
-          border-bottom-color: #282828;
-          border-left-color: #282828;
-          /* would be right, but we flipped the word */ }
-        body .grid .c .content .logo .word2 {
-          z-index: 0;
-          /* stack 2nd word below */ }
-        body .grid .c .content .logo .word2:before {
-          left: -4px;
-          top: -6px;
-          border-top-color: #282828;
-          border-left-color: #282828; }
-        body .grid .c .content .logo .word2:after {
-          right: -4px;
-          bottom: 4px;
-          border-bottom-color: #282828;
-          border-right-color: #282828; }
+        padding: 0 5px; }
       body .grid .c span, body .grid .c div {
-        color: #727272; }
+        color: #727272;
+        font-family: 'Avenir'; }
     body .grid .d {
       grid-row: 7;
       grid-column: 2; }
@@ -211,6 +182,10 @@ body {
         body .grid .d {
           grid-row: 2;
           grid-column: 3 / 4; } }
+      @media (max-width: 450px) {
+        body .grid .d {
+          grid-row: 8;
+          grid-column: 3; } }
     body .grid .e {
       grid-template-rows: 200px 200px;
       grid-row: 8;
@@ -220,6 +195,10 @@ body {
           grid-row: 5;
           grid-template-rows: 200px 200px;
           grid-column: 2 / 4; } }
+      @media (max-width: 450px) {
+        body .grid .e {
+          grid-row: 8;
+          grid-column: 4; } }
       body .grid .e img {
         width: 100%; }
     body .grid .f {
@@ -235,6 +214,10 @@ body {
       @media (max-width: 1024px) {
         body .grid .f {
           margin-top: 223px; } }
+      @media (max-width: 450px) {
+        body .grid .f {
+          grid-row: 3;
+          margin-top: 0px; } }
       body .grid .f .nested {
         position: relative;
         grid-template-columns: 1fr 2fr;
@@ -264,6 +247,10 @@ body {
         body .grid .g {
           grid-row: 5;
           grid-column: 4 / 5; } }
+      @media (max-width: 450px) {
+        body .grid .g {
+          grid-row: 6;
+          grid-column: 1 / 4; } }
     body .grid .h {
       grid-row: 6;
       grid-column: 3 / 5; }
@@ -271,6 +258,10 @@ body {
         body .grid .h {
           grid-row: 4;
           grid-column: 3 / 5; } }
+      @media (max-width: 450px) {
+        body .grid .h {
+          grid-row: 7;
+          grid-column: 1 / 6; } }
     body .grid .i {
       grid-column: 4 / 5;
       grid-row: 4 / 6; }
@@ -278,6 +269,9 @@ body {
         body .grid .i {
           grid-row: 3;
           grid-column: 4 / 5; } }
+      @media (max-width: 450px) {
+        body .grid .i {
+          grid-row: 4; } }
     body .grid .j {
       grid-row: 2;
       grid-column: 1 / 6; }
@@ -302,3 +296,15 @@ body {
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw; }
+    body .grid a {
+      color: #dc006c; }
+    body .grid small {
+      color: #333; }
+    body .grid .logo {
+      grid-row: 1;
+      grid-column: 1 / 7;
+      font: 84px 'Arial Narrow', sans-serif;
+      /* I picked this font because it's the closest looking 'web safe' font http://cssfontstack.com/ */
+      color: #fefefe;
+      text-transform: uppercase;
+      letter-spacing: -4px; }
