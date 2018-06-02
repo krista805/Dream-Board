@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Lombok";
-  src: url("/fonts/Lombok.otf") format("otf"); }
+  font-family: "Berlin";
+  src: url("/fonts/CstBerlinEastOriginalOT.otf") format("otf"); }
 
 @font-face {
   font-family: 'Avenir';
@@ -10,8 +10,9 @@ body {
   background: #fff;
   color: #fff;
   font-family: 'Avenir'; }
-  body h1.title {
-    font-family: "Lombok"; }
+  body h1 {
+    font-family: "Berlin", sans-serif;
+    color: black; }
   body .container {
     width: 1140px;
     max-width: 100%;
@@ -27,7 +28,7 @@ body {
     grid-gap: .7vw 1%;
     margin: 0 auto;
     grid-template-columns: 100px repeat(3, 1fr);
-    grid-template-rows: 80px 1fr 149px 149px 298px 260px 230px 332px 339px; }
+    grid-template-rows: 80px 1fr 149px 20% 298px 260px 230px 332px 339px; }
     @media (max-width: 1024px) {
       body .grid {
         grid-template-rows: 80px 1fr 149px 149px 252px 226px 205px 298px 400px; } }
@@ -129,12 +130,21 @@ body {
       z-index: 1;
       left: 0px;
       right: 0px;
-      background: #fff; } }
+      background: #fff;
+      padding: 29px 20px;
+      display: inline-block;
+      position: relative; } }
       @media all and (max-width: 600px) {
         body .grid header ul li:hover .linktitle {
           left: 80px; }
         body .grid header .icons {
-          padding: 20px 10px; }
+          padding: 20px 10px; } }
+  @media all and (max-width: 600px) and (max-width: 450px) {
+    body .grid header .icons {
+      width: 17px;
+      padding: 20px 5px;
+      display: inline-block; } }
+      @media all and (max-width: 600px) {
         body .grid header ul li:hover .icons {
           -webkit-transform: rotate(360deg);
           -moz-transform: rotate(360deg);
@@ -221,7 +231,7 @@ body {
       body .grid .f .nested {
         position: relative;
         grid-template-columns: 1fr 2fr;
-        padding: 5px 15px;
+        padding: 40px 15px;
         top: 0; }
         @media (max-width: 768px) {
           body .grid .f .nested {
@@ -233,7 +243,7 @@ body {
               line-height: 23px; } }
         body .grid .f .nested p {
           font-size: 17px;
-          line-height: 28px; }
+          line-height: 33px; }
       @media (max-width: 768px) {
         body .grid .f {
           grid-row: 2;

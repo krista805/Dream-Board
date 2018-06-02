@@ -1,9 +1,10 @@
 $bg-color: black;
 $color: #fff;
+$berlin: "Berlin" , sans-serif;
 
 @font-face {
-	font-family: "Lombok";
-	src: url('/fonts/Lombok.otf') format('otf');
+	font-family: "Berlin";
+	src: url('/fonts/CstBerlinEastOriginalOT.otf') format('otf');
 }
 
 @font-face {
@@ -19,8 +20,9 @@ body {
     color:$color;
     font-family:'Avenir';
 
-	h1.title {
-		font-family:"Lombok";
+	h1 {
+		font-family:$berlin;
+		color:black;
 	}
 
   .container {
@@ -42,7 +44,7 @@ body {
          grid-gap: .7vw 1%;
          margin: 0 auto;
          grid-template-columns: 100px repeat(3, 1fr);
-         grid-template-rows: 80px 1fr 149px 149px 298px 260px 230px 332px 339px;
+         grid-template-rows: 80px 1fr 149px 20% 298px 260px 230px 332px 339px;
 
          @media(max-width:1024px) {
             grid-template-rows: 80px 1fr 149px 149px 252px 226px 205px 298px 400px;
@@ -194,6 +196,9 @@ body {
 						left: 0px;
 						right: 0px;
 						background:#fff;
+						padding:29px 20px;
+						display:inline-block;
+						position:relative;
 					}
                 }
 
@@ -203,6 +208,12 @@ body {
 
                 .icons {
                 	padding: 20px 10px;
+
+					@media(max-width:450px){
+						width:17px;
+						padding:20px 5px;
+						display:inline-block;
+					}
                 }
 
                 ul li:hover .icons {
@@ -340,11 +351,9 @@ body {
 	        }
 
             .nested {
-                // padding: 5%;
                 position: relative;
-                // top: 5%;
                 grid-template-columns: 1fr 2fr;
-                padding: 5px 15px;
+                padding: 40px 15px;
                 top: 0;
 
 
@@ -361,7 +370,7 @@ body {
 
                 p {
                     font-size: 17px;
-                    line-height: 28px;
+                    line-height: 33px;
                 }
             }
 
