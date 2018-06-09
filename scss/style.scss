@@ -55,7 +55,12 @@ body {
             grid-template-rows: 80px 1fr 298px 318px 208px 200px;
         }
 
-        @media(max-width:450px) {
+		@media(max-width:749px) {
+            grid-template-columns: 0px repeat(3, 1fr);
+            grid-template-rows: auto;
+        }
+
+        @media(max-width:600px) {
             grid-template-columns: repeat(2, 1fr);
 			grid-template-rows:auto;
         }
@@ -124,7 +129,7 @@ body {
                         border-bottom:none;
                     }
 
-					@media(max-width:450px){
+					@media(max-width:600px){
 						display: block;
 						margin: 0 auto;
 					}
@@ -191,7 +196,7 @@ body {
 	                line-height:0px;
                 	background: #1ebfe6;
 
-					@media(max-width:450px){
+					@media(max-width:600px){
 						z-index: 1;
 						left: 0px;
 						right: 0px;
@@ -209,7 +214,7 @@ body {
                 .icons {
                 	padding: 20px 10px;
 
-					@media(max-width:450px){
+					@media(max-width:600px){
 						width:17px;
 						padding:20px 5px;
 						display:inline-block;
@@ -236,7 +241,7 @@ body {
                 grid-row:3;
             }
 
-			@media(max-width:450px) {
+			@media(max-width:600px) {
 	            grid-column: 1 / 5;
 
 	        }
@@ -246,7 +251,7 @@ body {
         .c {
             // grid-column: 4;
             // grid-row:1;
-            // background-color:#eaf2f6;
+            // background-color:#eaf2f6gulp;
             background: #4ca1af; /* fallback for old browsers */
           background: -webkit-linear-gradient(to right, #4ca1af, #c4e0e5); /* Chrome 10-25, Safari 5.1-6 */
           background: linear-gradient(to right, #eaf2f6, #c4e0e5);
@@ -262,7 +267,7 @@ body {
                 grid-column: 2;
             }
 
-			@media(max-width:450px) {
+			@media(max-width:600px) {
 				grid-row: 4;
 				grid-column: 1 / 4;
 
@@ -283,12 +288,6 @@ body {
         }
 
         .d {
-            // grid-row:1;
-            // grid-column: 5 / 6;
-
-            // grid-row: 2;
-            // grid-column: 3 / 4;
-
             grid-row: 7;
             grid-column: 2;
 
@@ -297,19 +296,14 @@ body {
                 grid-column: 3 / 4;
             }
 
-			@media(max-width:450px){
+			@media(max-width:600px){
 				grid-row:8;
 				grid-column:3;
 			}
         }
 
         .e {
-            // grid-row: 2;
-            // grid-column: 2 / 4;
-
-            // grid-row: 5;
             grid-template-rows: 200px 200px;
-            // grid-column: 2 / 4;
 
             grid-row: 8;
             grid-column: 2;
@@ -320,7 +314,7 @@ body {
                 grid-column: 2 / 4;
             }
 
-			@media(max-width:450px){
+			@media(max-width:600px){
 				grid-row: 8;
 				grid-column: 4;
 			}
@@ -345,7 +339,7 @@ body {
                 margin-top:223px;
             }
 
-			@media(max-width:450px) {
+			@media(max-width:600px) {
 	            grid-row:3;
 				margin-top:0px;
 	        }
@@ -384,10 +378,7 @@ body {
         }
 
         .g {
-            // grid-row:3;
-            // grid-row: 5;
             grid-column: 4 / 5;
-
             grid-row: 8;
 
             @media(max-width:768px) {
@@ -396,20 +387,18 @@ body {
 
             }
 
-			@media(max-width:450px){
+			@media(max-width:749px) {
+	            grid-row:6;
+				grid-column: 3 / 4;
+	        }
+
+			@media(max-width:600px){
 				grid-row: 6;
 				grid-column: 1 / 4;
 			}
         }
 
         .h {
-            // grid-area: h;
-            // grid-row:3;
-            // grid-column: 3 / 5;
-
-            // grid-row: 4;
-            // grid-column: 3 / 5;
-
             grid-row: 6;
             grid-column: 3 / 5;
 
@@ -418,17 +407,13 @@ body {
                 grid-column:3 / 5;
 
             }
-			@media(max-width:450px){
+			@media(max-width:600px){
 				grid-row: 7;
 				grid-column: 1 / 6;
 			}
         }
 
         .i {
-            // grid-column: 2;
-            // grid-row:3;
-
-            // grid-row: 3;
             grid-column: 4 / 5;
 
             grid-row: 4 / 6;
@@ -439,7 +424,7 @@ body {
 
             }
 
-			@media(max-width:450px){
+			@media(max-width:600px){
 				grid-row: 4;
 			}
 
