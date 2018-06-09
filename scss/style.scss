@@ -4,12 +4,12 @@ $berlin: "Berlin" , sans-serif;
 
 @font-face {
 	font-family: "Berlin";
-	src: url('/fonts/CstBerlinEastOriginalOT.otf') format('otf');
+	src: url('./fonts/CstBerlinEastOriginalOT.otf') format('otf');
 }
 
 @font-face {
 	font-family: 'Avenir';
-	src: url("/fonts/AvenirLTStd-Medium.otf") format("otf");
+	src: url("./fonts/AvenirLTStd-Medium.otf") format("otf");
 }
 
 // @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
@@ -91,7 +91,7 @@ body {
             @media (max-width:768px) {
                 grid-row: 1 ;
                 grid-column: 1 / 7;
-                background-image:url('/image/landscape.jpeg');
+                background-image:url('./image/landscape.jpeg');
                 background-repeat:no-repeat;
             }
 
@@ -327,7 +327,7 @@ body {
         .f {
             color: #fff;
             background-color: #71b6c1;
-            background-image: url('/image/nice-snow.png');
+            background-image: url('./image/nice-snow.png');
             grid-template-columns:  2fr;
             grid-column: 2 / 5;
             z-index: 999;
