@@ -249,17 +249,11 @@ body {
         }
 
         .c {
-            // grid-column: 4;
-            // grid-row:1;
-            // background-color:#eaf2f6gulp;
             background: #4ca1af; /* fallback for old browsers */
-          background: -webkit-linear-gradient(to right, #4ca1af, #c4e0e5); /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to right, #eaf2f6, #c4e0e5);
+            background: -webkit-linear-gradient(to right, #4ca1af, #c4e0e5); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #eaf2f6, #c4e0e5);
             position:relative;
-
-            // grid-row: 4;
             grid-column: 2;
-
             grid-row: 6;
 
             @media (max-width:768px) {
@@ -269,20 +263,23 @@ body {
 
 			@media(max-width:600px) {
 				grid-row: 4;
-				grid-column: 1 / 4;
+                grid-column: 1 / 4;
+                padding: 0px 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
 
 	        }
 
             .content {
                 text-align:center;
                 position: relative;
-                top: 35%;
-                padding:0 5px;
             }
 
             span, div {
                 color: #727272;
                 font-family:'Avenir';
+                font-weight: 700;
             }
 
         }
@@ -299,7 +296,11 @@ body {
 			@media(max-width:600px){
 				grid-row:8;
 				grid-column:3;
-			}
+            }
+            
+            img {
+                min-height: 100%;
+            }
         }
 
         .e {
@@ -339,9 +340,17 @@ body {
                 margin-top:223px;
             }
 
+            @media(max-width:768px) {
+                grid-row: 2;
+                grid-column: 2 / 5;
+                z-index: 999;
+                margin-top: 170px;
+            }
+
 			@media(max-width:600px) {
-	            grid-row:3;
-				margin-top:0px;
+                grid-row:2;
+                grid-column: 1 / 7;
+                margin-top: 78%;
 	        }
 
             .nested {
@@ -368,13 +377,6 @@ body {
                 }
             }
 
-            @media(max-width:768px) {
-                grid-row: 2;
-                grid-column: 2 / 5;
-                z-index: 999;
-                margin-top: 170px;
-
-            }
         }
 
         .g {
@@ -439,6 +441,11 @@ body {
                 grid-row: 2;
                 grid-column: 1 / 6;
             }
+            
+            @media(max-width:600px) {
+                grid-row: 2 / 3;
+                grid-column: 300%;
+            }
         }
 
         .k {
@@ -463,6 +470,10 @@ body {
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
+
+            @media(max-width:600px){
+                width:300%;
+            }
         }
 
 

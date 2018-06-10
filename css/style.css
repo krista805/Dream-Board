@@ -180,15 +180,18 @@ body {
       @media (max-width: 600px) {
         body .grid .c {
           grid-row: 4;
-          grid-column: 1 / 4; } }
+          grid-column: 1 / 4;
+          padding: 0px 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; } }
       body .grid .c .content {
         text-align: center;
-        position: relative;
-        top: 35%;
-        padding: 0 5px; }
+        position: relative; }
       body .grid .c span, body .grid .c div {
         color: #727272;
-        font-family: 'Avenir'; }
+        font-family: 'Avenir';
+        font-weight: 700; }
     body .grid .d {
       grid-row: 7;
       grid-column: 2; }
@@ -200,6 +203,8 @@ body {
         body .grid .d {
           grid-row: 8;
           grid-column: 3; } }
+      body .grid .d img {
+        min-height: 100%; }
     body .grid .e {
       grid-template-rows: 200px 200px;
       grid-row: 8;
@@ -218,7 +223,7 @@ body {
     body .grid .f {
       color: #fff;
       background-color: #71b6c1;
-      background-image: url("./image/nice-snow.png");
+      background-image: url("../image/nice-snow.png");
       grid-template-columns: 2fr;
       grid-column: 2 / 5;
       z-index: 999;
@@ -228,10 +233,17 @@ body {
       @media (max-width: 1024px) {
         body .grid .f {
           margin-top: 223px; } }
+      @media (max-width: 768px) {
+        body .grid .f {
+          grid-row: 2;
+          grid-column: 2 / 5;
+          z-index: 999;
+          margin-top: 170px; } }
       @media (max-width: 600px) {
         body .grid .f {
-          grid-row: 3;
-          margin-top: 0px; } }
+          grid-row: 2;
+          grid-column: 1 / 7;
+          margin-top: 78%; } }
       body .grid .f .nested {
         position: relative;
         grid-template-columns: 1fr 2fr;
@@ -248,12 +260,6 @@ body {
         body .grid .f .nested p {
           font-size: 17px;
           line-height: 33px; }
-      @media (max-width: 768px) {
-        body .grid .f {
-          grid-row: 2;
-          grid-column: 2 / 5;
-          z-index: 999;
-          margin-top: 170px; } }
     body .grid .g {
       grid-column: 4 / 5;
       grid-row: 8; }
@@ -297,6 +303,10 @@ body {
         body .grid .j {
           grid-row: 2;
           grid-column: 1 / 6; } }
+      @media (max-width: 600px) {
+        body .grid .j {
+          grid-row: 2 / 3;
+          grid-column: 300%; } }
     body .grid .k {
       grid-row: 8;
       grid-column: 3; }
@@ -314,6 +324,9 @@ body {
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw; }
+      @media (max-width: 600px) {
+        body .grid .full-width {
+          width: 300%; } }
     body .grid a {
       color: #dc006c; }
     body .grid small {
